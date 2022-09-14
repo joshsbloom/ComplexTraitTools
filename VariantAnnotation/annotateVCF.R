@@ -22,7 +22,7 @@ out.dir='/home/jbloom/Downloads/'
 #where is code
 base.dir='~/Dropbox/code/ComplexTraitTools/'
 
-source(paste0(base.dir, 'VariantAnnotation/functions/proveanFx.R'))
+source(paste0(base.dir, 'VariantAnnotation/R/proveanFx.R'))
 
 ## note, the bioconductor TxDb object is old and broken, we'll go ahead and build our own
 ##library("TxDb.Scerevisiae.UCSC.sacCer3.sgdGene")
