@@ -5,7 +5,7 @@
 The xQTLStats package can be downloaded and installed by running the following command from the R console:
 
 ```r
-devtools::install_github("joshsbloom/xQTLStats" ,ref="main")
+devtools::install_github("joshsbloom/ComplexTraitTools/xQTLStats" ,ref="main")
 ```
 
 ### Usage
