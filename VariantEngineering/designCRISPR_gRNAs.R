@@ -20,7 +20,7 @@ source(paste0(base.dir, 'VariantAnnotation/functions/proveanFx.R'))
 
 
 # import some functions 
-source(paste0(base.dir, 'VariantEngineering/onlyPAMs/designCRISPR_gRNAs_fx.R'))
+source(paste0(base.dir, 'VariantEngineering/R/designCRISPR_gRNAs_fx.R'))
 
 sacCer3=BSgenome.Scerevisiae.UCSC.sacCer3
     # make our own txdb structure (motivated by annotation discrepancy found for GRX3 ORF and issues with dubious ORFs)
