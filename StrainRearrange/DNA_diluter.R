@@ -33,7 +33,9 @@ y=H2O.needed %>%
 
 robot.df=data.frame(sourceplate=x$DNAsource, watersource="watersource", receivingplate=paste0('dil_', x$DNAsource),
             startpos=x$Wells, DNAvol=x$DNAvol, H2Ovol=y$H2Ovol, endpos=x$Wells , stringsAsFactors = FALSE)
-                                                                        
+#reorder 
+robot.df=robot.df[order(robot.df$sourceplate, robot.df$startpos),]
+
 #adding eol argument here should obviate need to run unix2dos
 write.table(robot.df, outfile, col.names = TRUE, row.names = FALSE, sep = ",", quote = FALSE, eol = "\r\n")
 
