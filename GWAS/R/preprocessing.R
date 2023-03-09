@@ -1,5 +1,6 @@
  
 getGWASvariants=function(path.to.gwas.data){
+    setwd(path.to.gwas.data)
     x=BEDMatrix('1011GWAS_matrix.bed')
     g=as.matrix(x)
     mnames=read.delim('1011GWAS_matrix.bim', header=F, sep='\t', stringsAsFactors=F)

@@ -12,12 +12,13 @@ library(vcfR)
 
 
 # I split the previously curated vcf (variant call format files with genotype information) into sub vcfs for each chromosome here 
-#vcf.prefix='/data/yeast/chr_rename-014.'
+vcf.prefix='/data/yeast/chr_rename-014.'
 
 #where are vcf.gz files split by chr
-vcf.prefix='/home/jbloom/Downloads/'
+#vcf.prefix='/home/jbloom/Downloads/'
+
 #where to save output
-out.dir='/home/jbloom/Downloads/'
+out.dir='/home/jbloom/Downloads/peter2018_vcf/'
 
 #where is code
 base.dir='~/Dropbox/code/ComplexTraitTools/'
@@ -60,7 +61,8 @@ extractZ=T
 for(chr in unique.chrs ) { 
     print(chr)
     #from James
-    vcf.in=read.vcfR(paste0(vcf.prefix, chr, '.vcf.gz'))
+    vcf.in=read.vcfR(paste0(vcf.prefix, chr, '.vcf'))
+#    vcf.in=read.vcfR(paste0(vcf.prefix, chr, '.vcf.gz'))
     
     # vcfR function to calculate minor allele frequency (why is this f(x) so slow, let's just diy this)
     #mafdf=maf(vcf.in, element=2)

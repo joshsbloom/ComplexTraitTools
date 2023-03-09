@@ -236,19 +236,20 @@ for(chr in unique.chrs ) {
               }))
 
    Zsub=Z[,match(pC.subset$idx, colnames(Z))]
-   pC.subset$af=colSums(Zsub)/(nrow(Zsub)*2)
+   pC.subset$af=colSums(Zsub, na.rm=T)/(nrow(Zsub)*2)
    pC.subset$flipped=pC.subset$af>.5
    maf=pC.subset$af
    maf[maf>.5]=(1-maf[maf>.5])
    pC.subset$maf = maf 
 
-   flipme=which(pC.subset$flipped)
-   for(f in flipme) {
-    tmp=Z[,f]
-    tmp[Z[,f]==0]=2
-    tmp[Z[,f]==2]=0
-    Z[,f]=tmp
-   }
+ #code to flip alleles
+#   flipme=which(pC.subset$flipped)
+#   for(f in flipme) {
+#    tmp=Z[,f]
+#    tmp[Z[,f]==0]=2
+#    tmp[Z[,f]==2]=0
+#    Z[,f]=tmp
+#   }
 
 # convert to minor allele frequency 
 #   maf=af
@@ -265,7 +266,8 @@ for(chr in unique.chrs ) {
     }
 }
 #----------------------------------------------------------------------------------------------------
-#saveRDS(annot.matrices, file='~/nsAnnot.RDS')
+saveRDS(annot.matrices, file='/home/jbloom/Downloads/peter2018_vcf/nonsyn_matrices_annot.RDS')
+saveRDS(nonsyn.matrices, file='/home/jbloom/Downloads/peter2018_vcf/nonsyn_matrices.RDS')
 #all variants
 #gvec.corA=gvec.cor
 

@@ -135,7 +135,7 @@ cross =  argmax.geno(cross, step=0, map.function='kosambi', error.prob=error.pro
  #cross =  calc.genoprob(cross, step=0, map.function='kosambi', error.prob=.0075)
 cross$geno = lapply(cross$geno, function(x) { rownames(x$argmax)=rownames(x$data); return(x) } )
 
-cross$pheno$translocation=
+cross$pheno$translocation=t.discrete[match(cross$pheno$id, names(t.discrete))]
 
 
 #sanity check output 
@@ -174,7 +174,9 @@ dev.off()
 
 }
 
-cross$pheno$translocation=as.vector(t.discrete[cross$pheno$id])
+#cross$pheno$translocation=as.vector(t.discrete[cross$pheno$id])
 cross$geno = lapply(cross$geno, function(x) { x$data=x$argmax; return(x) } )
 
 write.cross(cross, format='csvsr', filestem='/data/yeast/Leslie/cross')
+
+saveRDS(cross, file='/data/yeast/Leslie/cross.RDS')
