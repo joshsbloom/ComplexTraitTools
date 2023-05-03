@@ -34,7 +34,6 @@ A=GWAS.variants$A
 #   pivot_longer(cols=starts_with(rep.phenos[1]), names_to='rep', values_to="area") %>%
 #   select("Strain_Name", "Plate", "rep", "area") %>% unite("plate_rep", "Plate", "rep", remove=F)
     #replace NAs with 0s
-
 #
 svdA=fastLMMsvd(GWAS.variants$A)
 
