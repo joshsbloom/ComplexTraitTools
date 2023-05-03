@@ -27,7 +27,6 @@ GWAS.variants=filterGWASvariants(GWAS.variants, af.cutoff=.05, na.frq=.05)
 #calc additive relatedness matrices 
 GWAS.variants=calcA(GWAS.variants)
 
-
 A=GWAS.variants$A
 
 #tidy this stuff above 
