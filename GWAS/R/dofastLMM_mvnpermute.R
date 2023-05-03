@@ -31,14 +31,14 @@ dofastLMM_mvnpermute=function(y,X=NULL,GWAS.variants, svdA=NULL, nperm=100, REML
     g=GWAS.variants$g
     g[is.na(g)]=0
 
-    if(is.null(x)){
+    if(is.null(X)){
       X = matrix(1,length(y))
     }
 
     if(REML) {method='REML'} else {method='ML'}
 
 
-    nmm=mixed.solve(y,X=X,K=A, method=method)
+    nmm=rrBLUP::mixed.solve(y,X=X,K=A, method=method)
   
 
     delta=nmm$Ve/nmm$Vu
@@ -58,7 +58,7 @@ dofastLMM_mvnpermute=function(y,X=NULL,GWAS.variants, svdA=NULL, nperm=100, REML
     Sdelt=USUt$d+delta
 
     n=length(y)
-    Uty=Ut%*%cbind(y, mvnpermute(y,matrix(1,length(y)),nmm$Vu*A+nmm$Ve*diag(length(y)),nperm))
+    Uty=Ut%*%cbind(y, mvnpermute::mvnpermute(y,matrix(1,length(y)),nmm$Vu*A+nmm$Ve*diag(length(y)),nperm))
     sds=solve(diag(Sdelt))
 
 

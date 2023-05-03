@@ -1,11 +1,9 @@
 library(BEDMatrix)
 library(rrBLUP)
-library(NAM)
-#library(milorGWAS)
-library(data.table)
-library(ggplot2)
 library(mvnpermute)
-library(regress)
+
+#library(NAM)
+#library(milorGWAS)
 
 source('/home/jbloom/Dropbox/code/ComplexTraitTools/GWAS/R/preprocessing.R')
 source('/home/jbloom/Dropbox/code/ComplexTraitTools/GWAS/R/dofastLMM_mvnpermute.R')
@@ -32,8 +30,36 @@ GWAS.variants=calcA(GWAS.variants)
 
 A=GWAS.variants$A
 
+#tidy this stuff above 
+#x=pheno%>%
+#   pivot_longer(cols=starts_with(rep.phenos[1]), names_to='rep', values_to="area") %>%
+#   select("Strain_Name", "Plate", "rep", "area") %>% unite("plate_rep", "Plate", "rep", remove=F)
+    #replace NAs with 0s
+
+#
+svdA=fastLMMsvd(GWAS.variants$A)
+
+gwas.results=list()
+
+for(p in colnames(pheno)[-c(1,2)]){
+   #an example of some preprocessing ----------------
+   up= unlist(pheno[,p])
+   upnorm=sqrt(up-min(up))
+   #go ahead and remove plate effect 
+   ry=residuals(lm(upnorm~pheno$Plate))
+   names(ry)=rownames(GWAS.variants$g)
+   #-------------------------------------------------
+
+   gwas.results[[p]]=dofastLMM_mvnpermute(y=ry,X=NULL,GWAS.variants, svdA=svdA, nperm=500, REML=T) 
+}
+
+
 
 #calculate narrow-sense heritabilities -------------------------------------------
+library(data.table)
+#library(ggplot2)
+library(regress)
+
     nh2.raw=list()
     nh2.sqrt=list()
     for(p in colnames(pheno)[-c(1,2)]) {
@@ -98,22 +124,4 @@ t(sapply(rrh2.sqrt,function(x) x$sigma))/(sapply(rrh2.sqrt, function(x) sum(x$si
 
 #-------------------------------------------------------------------------------------------
 
-#tidy this stuff above 
-#x=pheno%>%
-#   pivot_longer(cols=starts_with(rep.phenos[1]), names_to='rep', values_to="area") %>%
-#   select("Strain_Name", "Plate", "rep", "area") %>% unite("plate_rep", "Plate", "rep", remove=F)
-    #replace NAs with 0s
 
-#
-svdA=fastLMMsvd(GWAS.variants$A)
-
-gwas.results=list()
-
-for(p in colnames(pheno)[-c(1,2)]){
-   up= unlist(pheno[,p])
-   upnorm=sqrt(up-min(up))
-   #go ahead and remove plate effect 
-   ry=residuals(lm(upnorm~pheno$Plate))
-   names(ry)=rownames(GWAS.variants$g)
-   gwas.results[[p]]=dofastLMM_mvnpermute(y=ry,X=NULL,GWAS.variants, svdA=svdA, nperm=500, REML=T) 
-}
