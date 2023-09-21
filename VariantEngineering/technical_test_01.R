@@ -407,7 +407,7 @@ o.array[['intron']]=istack2
 
 pstack=stack.it(pseudoGuides)
 pstack=pstack[pstack$nedit==1,]
-set.seed(52)
+set.seed(499)
 pstack=pstack[sort(sample(1:nrow(pstack), 500)),]
 o.array[['pseudo']]=pstack
 
@@ -461,15 +461,15 @@ c.array[['estops']]$guide=as.character(subseq(DNAStringSet(h$guide), 1,20))
 
 
 ce1=ce[ce$nedit==1,]
-set.seed(57)
-y=ce1[ ce1$CONSEQUENCE=='synonymous' & ce1$U6terminator==F & ce1$dubious==F & ce1$guidePAM12PMcount<3,]
+set.seed(577)
+y=ce1[ ce1$CONSEQUENCE=='synonymous' & ce1$U6terminator==F & ce1$dubious==F & ce1$guidePAM12PMcount<3 & !(ce1$GENEID %in% geneset) ,]
 c.array[['syn_random']]=y[sort(sample(1:nrow(y), 1000)),]
 h=g[match(c.array[['syn_random']]$guideIndex, g$guideIndex),]
 c.array[['syn_random']]$guide=as.character(subseq(DNAStringSet(h$guide), 1,20))
 
 
 set.seed(58)
-y=ce1[ ce1$CONSEQUENCE=='nonsynonymous' &ce1$U6terminator==F & ce1$dubious==F & ce1$guidePAM12PMcount<3,]
+y=ce1[ ce1$CONSEQUENCE=='nonsynonymous' &ce1$U6terminator==F & ce1$dubious==F & ce1$guidePAM12PMcount<3 & !(ce1$GENEID %in% geneset),]
 c.array[['nonsyn_random']]=y[sort(sample(1:nrow(y), 1000)),]
 h=g[match(c.array[['nonsyn_random']]$guideIndex, g$guideIndex),]
 c.array[['nonsyn_random']]$guide=as.character(subseq(DNAStringSet(h$guide), 1,20))
