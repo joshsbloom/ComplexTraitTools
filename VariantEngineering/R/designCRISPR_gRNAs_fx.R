@@ -94,7 +94,6 @@ get_gRNAs_and_predict_edit=function(nchr, sacCer3, txdb, sc3.set ) {
 
     Nchanges=c('A', 'C', 'T', 'G')
     GGchanges=c('CG', 'TG', 'CA', 'TA', 'AA', 'GA', 'AC', 'CC', 'TC', 'GC', 'CT', 'TT', 'AT', 'GT')
-    
     for(g in Nchanges) {
             gPAMseqtemp=gPAMseq
             gPAMrepairtemp=gPAMrepair
@@ -137,6 +136,168 @@ get_gRNAs_and_predict_edit=function(nchr, sacCer3, txdb, sc3.set ) {
     reffull=t(sapply(reffull, s2c))
 
     
+    gEditInfo=lapply(editedSequences.stringset.fwdL, function(x) {
+        altfull=t(sapply(as.character(x), s2c))
+        gPOS=rep(0,length(gPAM))
+        gREF=rep('',length(gPAM))
+        gALT=rep('', length(gPAM))         
+        for(i in 1:nrow(reffull)){
+            nref.range=range(which(reffull[i,]!=altfull[i,] ))
+            gPOS[i]=min(nref.range)
+            gREF[i]=(c2s(reffull[i, seq(nref.range[1], nref.range[2])   ])) 
+            gALT[i]=(c2s(altfull[i, seq(nref.range[1], nref.range[2])   ])) 
+        }
+        return(paste0(chr.name, ':', start(gPAM)+gPOS-1,':', gREF,':', gALT))
+    })
+
+
+
+# turn back into strings
+#   editedSequences=apply(gPAMseq, 1, c2s)
+
+    # reverse complement 
+#    editedSequences.stringset=DNAStringSet(editedSequences)
+#    editedSequences.stringset.fwd=editedSequences.stringset
+#    editedSequences.stringset.fwd[as.vector(strand(gPAM)=='-')]=reverseComplement(editedSequences.stringset.fwd[as.vector(strand(gPAM)=='-')])
+    
+    # ranges and editedSequences.stringset correspond to sequence on forward strand
+    # so change strand to forward
+    strand(gPAM)[strand(gPAM)=='-']='+'
+
+    # add in expected edited sequence as a DNA string set (all sequence on forward strand)
+    #gPAM$forward.edited.sequence=editedSequences.stringset
+    editedSequences.stringsetL=as.data.frame(editedSequences.stringsetL)
+    editedSequences.stringset.fwdL=as.data.frame(editedSequences.stringset.fwdL)
+
+    repairTemplate=as.data.frame(repSequences)
+    #we never use this, so commenting it out
+    #gPAM$editedSequenceAsIsL=editedSequences.stringsetL
+    gPAM$repairTemplate=repairTemplate
+   
+    gPAM$editedSequenceFwdL=editedSequences.stringset.fwdL
+    gPAM$gEditInfo=as.data.frame(gEditInfo)
+    # remove guides that do not introduce any changes
+   # identical=which(gPAM$guide == gPAM$editedSequenceAsIs)
+   # if(returnIdentical) {
+   #     gPAM=gPAM[identical]
+   #     # create an index for each guide sequence ... note that the guideIndex is chromosome specific
+   #     gPAM$guideIndexNoChange=paste0(chr.name, ':', seq(1, length(gPAM)))
+   # } else {
+   #     gPAM=gPAM[-identical]
+   #     # create an index for each guide sequence ... note that the guideIndex is chromosome specific
+        gPAM$guideIndex=paste0(chr.name, ':', seq(1, length(gPAM)))
+   # }
+
+    pdict_for_guide_seqs=build_4base_pdict(gPAM$guide)
+    guide.12PM.genome.count.list=lapply(pdict_for_guide_seqs, function(seed.dict) {
+                    vcountPDict(seed.dict,  sc3.set, max.mismatch=0, with.indels=F)  
+                  })
+    # describe this : guidePAM12PMcount
+    gPAM$guidePAM12PMcount=rowSums(sapply(guide.12PM.genome.count.list, rowSums))
+    gPAM$repair=NULL
+    return(gPAM)
+}
+
+
+get_gRNAs_and_predict_string=function(rndmer, sc3set, chr.name='rndmer' ) {
+
+    PAMp_string=DNAString('GG')
+    PAMm_string=reverseComplement(PAMp_string)
+    #chr.name=names(sacCer3)[nchr]
+
+    PAMp=matchPattern(PAMp_string, rndmer, fixed=T)
+    PAMm=matchPattern(PAMm_string, rndmer, fixed=T)
+    
+   # construct granges object 
+    gPAM = GRanges(
+                   seqnames='rndmer', #names(sacCer3)[nchr], 
+                   ranges=IRanges(start=c(start(ranges(PAMp))-1, start(ranges(PAMm))), 
+                                           end=c(end(ranges(PAMp)), end(ranges(PAMm))+1)),
+                       strand=c(rep('+', length(PAMp)),rep('-', length(PAMm)) ) 
+                    )
+    genome(gPAM)='sacCer3'
+    gPAM$guide=rep('', length(gPAM))
+
+    gPAM$repair=rep('', length(gPAM))
+
+    too.close.to.ends=which( ((start(gPAM)-50)<0 ) | ((end(gPAM)+50)> length(rndmer)) )
+    gPAM=gPAM[-too.close.to.ends]
+
+    # extract PAM sequence and targetting sequence (convert CCN to NGG)
+    # extract targetting sequence only
+    soi=as.vector(strand(gPAM)=='+')
+    gPAM$guide[soi]=extractAt(rndmer, IRanges(start(gPAM)[soi]-20, start(gPAM)[soi]+2))
+        
+       
+    gPAM$repair[soi]=extractAt(rndmer, IRanges(start(gPAM)[soi]-43, start(gPAM)[soi]+46))
+
+    soi=as.vector(strand(gPAM)=='-')
+    gPAM$guide[soi]=as.character(reverseComplement(
+                            DNAStringSet(extractAt(rndmer, IRanges(end(gPAM)[soi]-2, end(gPAM)[soi]+20)))))
+         
+    gPAM$repair[soi]=as.character(reverseComplement(
+                            DNAStringSet(extractAt(rndmer, IRanges(start(gPAM)[soi]-44, start(gPAM)[soi]+45)))))
+         
+                                                
+                 
+    #this bit is confusing
+    # modify gPAM such that ranges match where the sequences start and stop
+    start(ranges(gPAM[strand(gPAM)=='+']))=start(ranges(gPAM[strand(gPAM)=='+']))-20
+    #this isn't fixed yet
+    end(ranges(gPAM[strand(gPAM)=='-']))=end(ranges(gPAM[strand(gPAM)=='-']))+20
+    
+    # edit all Cs to Ts for positions 4-8 
+    gPAMseq=t(sapply(gPAM$guide, s2c))
+    #for(p in 4:8) { gPAMseq[gPAMseq[,p]=='C' ,p]='T' }
+
+    gPAMrepair=t(sapply(gPAM$repair, s2c))
+
+    gPAMrepL=gPAMseqL=list()
+    #targeted changes 
+
+    Nchanges=c('A', 'C', 'T', 'G')
+    GGchanges=c('CG', 'TG', 'CA', 'TA', 'AA', 'GA', 'AC', 'CC', 'TC', 'GC', 'CT', 'TT', 'AT', 'GT')
+    for(g in Nchanges) {
+            gPAMseqtemp=gPAMseq
+            gPAMrepairtemp=gPAMrepair
+            for(i in 1:length(GGchanges)){
+                gPAMrepairtemp[,44]=gPAMseqtemp[,21]= g
+                gPAMrepairtemp[,45]=gPAMseqtemp[,22]= s2c(GGchanges[i])[1]
+                gPAMrepairtemp[,46]=gPAMseqtemp[,23]= s2c(GGchanges[i])[2]
+                gPAMseqL[[ paste0(g,GGchanges[i]) ]]=gPAMseqtemp
+                gPAMrepL[[ paste0(g,GGchanges[i]) ]]=gPAMrepairtemp
+            }
+    }
+
+    editedSequencesL=lapply(gPAMseqL, function(x) apply(x, 1, c2s))
+
+
+    editedSequences.stringsetL=lapply(editedSequencesL, function(x) DNAStringSet(x))
+    editedSequences.stringset.fwdL=editedSequences.stringsetL
+    editedSequences.stringset.fwdL=lapply(editedSequences.stringset.fwdL, 
+           function(x) {
+               x[as.vector(strand(gPAM)=='-')]=reverseComplement(x[as.vector(strand(gPAM)=='-')])
+               return(x)
+           })
+
+    
+    repSequences=lapply(gPAMrepL, function(x) apply(x, 1, c2s))
+    repSequences=lapply(repSequences, function(x) DNAStringSet(x))
+
+    repSequences=lapply(repSequences, 
+           function(x) {
+               x[as.vector(strand(gPAM)=='-')]=reverseComplement(x[as.vector(strand(gPAM)=='-')])
+               return(x)
+           })
+   
+
+
+    reffull= extractAt(rndmer, IRanges(start(gPAM), end(gPAM) ))
+ #   reffull[as.vector(strand(gPAM)=='-')]=reverseComplement(    reffull[as.vector(strand(gPAM)=='-')] )
+    reffull= t(sapply(as.character(reffull), s2c)) #t(sapply(reffull, s2c))
+
+    chr.name='rndmer'
+
     gEditInfo=lapply(editedSequences.stringset.fwdL, function(x) {
         altfull=t(sapply(as.character(x), s2c))
         gPOS=rep(0,length(gPAM))
