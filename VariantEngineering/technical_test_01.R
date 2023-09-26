@@ -373,7 +373,9 @@ stack.it=function(gtable) {
     #fix guide sequence b
 
     gtable$guide=as.character(subseq(DNAStringSet(gtable$guide), 1,20))
-    rstack=rep(gtable, each=ncol(gtable$repairTemplate[1,]))
+    #was this 
+    #rstack=rep(gtable, each=ncol(gtable$repairTemplate[1,]))
+    rstack=rep(gtable, ncol(gtable$repairTemplate[1,]))
     rstack$repairTemplate=stack(gtable$repairTemplate)$values
     rstack$editedSequenceFwdL=stack(gtable$editedSequenceFwdL)
     rstack$gEditInfo=stack(gtable$gEditInfo)
