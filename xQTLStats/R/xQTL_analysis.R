@@ -1,29 +1,7 @@
-#add jitter to a genetic map 
-jitterGmapVector=function(themap, amount=1e-6) {
-    for (i in 1:length(themap)) {
-         n <- length(themap[[i]])
-         themap[[i]] <- themap[[i]] + c(0, cumsum(rep(amount, n - 1)))
-    }
-    return(themap)
-}
-
-#convert physical position to genetic map position 
-getGmapPositions=function(vcf.cross, gmap, uchr) {
-    #get physical position, split by chromosome
-    p.by.chr=split(vcfR::getPOS(vcf.cross),vcfR::getCHROM(vcf.cross))
-    #keep things sorted (yay yeast chr names with roman numerals)
-    p.by.chr=p.by.chr[uchr]
-
-   #where to put the variant sites, impute onto gmap
-    imputed.positions=mapply( 
-           function(x, y){
-                approxfun(y$ppos, y$map, rule=2)(x)
-            },
-            x=p.by.chr, y=gmap,
-            SIMPLIFY=F)
-
-}
-createFounderPop=function(vcf, gt, p.names, X.only=F, X.drop=T) { 
+# take the larger vcf,  genotype calls, and a subset of parents 
+# extracts segregating sites 
+# return an alphaSimR founder population
+createFounderPop=function(vcf, gt, p.names, X.only=F, X.drop=T, gmap) { 
     gt.sub=gt[,colnames(gt) %in% p.names]
 
     #monomorphic=apply(gt.sub, 1, function(x) all.equal(x))
@@ -66,5 +44,60 @@ createFounderPop=function(vcf, gt, p.names, X.only=F, X.drop=T) {
 }
 
 
+#' Phase reference and alt counts given the ref/alt calls for one of the parents, using AlphaSimR objects
+#'
+#' @param df data.frame output from getBiallelicCounts() should contain the columns: ID,ref,alt
+#' @param p1.name name of parent to be designated parent 1 in vcf.cross (name must exist in vcf.cross) 
+#' @param founderPop #### 
+#' @return data.frame of variant ID, ref count, and alt count phased  
+#' @export
+phaseBiparental=function(df, p1.name, founderPop, genMap){
 
+        gID=genMap$id
+        p1.ref=AlphaSimR::pullMarkerGeno(founderPop, genMap$id)[p1.name,]==0
+        p1.ref=p1.ref[gID]
+        vname=names(p1.ref)
 
+        p1=c(df$ref[p1.ref], df$alt[!p1.ref])
+        vscramb=c(vname[p1.ref], vname[!p1.ref])
+        names(p1)=vscramb
+        p1=p1[vname]
+
+        p2=c(df$ref[!p1.ref], df$alt[p1.ref])
+        vscramb=c(vname[!p1.ref], vname[p1.ref])
+        names(p2)=vscramb
+        p2=p2[vname]
+        if(!is.null(df$expected)) {
+            expected.phased=ifelse(p1.ref, df$expected, 1-df$expected)
+            df$expected.phased=expected.phased
+         }
+         df$p1=p1
+         df$p2=p2
+    return(df)
+}
+
+#' Subset GATK table for known segregating variants and phase given parental genotypes
+#' 
+#' 
+makeCountTablesGATK=function(sample_dir, allele_counts, p.names, vcf, gt, gmap) {
+	founderPop = createFounderPop(vcf,gt, p.names,X.only=F, X.drop=F, gmap)
+	genMap=AlphaSimR::getGenMap(founderPop)
+	scounts <- readr::read_tsv(stringr::str_c(sample_dir, "/", allele_counts))
+
+	scounts.sub=scounts[paste0(scounts$contig, '_', scounts$position) %in% genMap$id,]
+        scounts=data.frame(id=paste0(scounts.sub$contig, '_', scounts.sub$position),ref=scounts.sub$refCount, alt=scounts.sub$altCount)
+        scounts=dplyr::left_join(genMap, scounts, by='id')
+
+        scounts$ref[is.na(scounts$ref)]=0
+        scounts$alt[is.na(scounts$alt)]=0
+        names(scounts)[1]='ID'
+
+	countdf=phaseBiparental(scounts, p.names[1], founderPop, genMap)
+        
+        #note, we need a better structure for keeping track of which parent is which 
+        attr(countdf, 'p1')=p.names[1]
+        attr(countdf, 'p2')=p.names[2]
+
+	return(countdf)
+
+}
