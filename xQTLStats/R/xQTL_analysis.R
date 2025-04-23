@@ -77,8 +77,15 @@ phaseBiparental=function(df, p1.name, founderPop, genMap){
 }
 
 #' Subset GATK table for known segregating variants and phase given parental genotypes
-#' 
-#' 
+#'
+#' @param sample_dir sample directory 
+#' @param allele_counts name of file
+#' @param p.names expected parents
+#' @param vcf vcfR object
+#' @param gt genotype calls from vcfR object
+#' @param gmap genetic map
+#' @return data.frame with original and phased counts
+#' @export
 makeCountTablesGATK=function(sample_dir, allele_counts, p.names, vcf, gt, gmap) {
 	founderPop = createFounderPop(vcf,gt, p.names,X.only=F, X.drop=F, gmap)
 	genMap=AlphaSimR::getGenMap(founderPop)
