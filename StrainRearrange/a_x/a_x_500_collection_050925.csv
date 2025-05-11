@@ -1,0 +1,429 @@
+Plate 1.1,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,,,APK x,,APK x,,,,,
+B,,,,,,APK x,,APK x,,,,
+C,,,,,APK x,,,,,,,
+D,,,,,,APK x,APK x,APK a,,,,
+E,,,,,,,,,AFF x,AFF x,,
+F,,BFR a,,,BNH a,BNH x,,,AFF x,AFF x,AFF x,AFF x
+G,,BFR x,BFR x,,BNH a,BNH x,BNH x,,AFF x,AFF x,AFF x,AFF x
+H,BFR a,,BFR x,,,,BNH a,BNH x,AFF x,AFF x,AFF x,
+,,,,,,,,,,,,
+Plate 1.2,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,,,,,,,,,,
+B,,,,,,,,,,,,
+C,,,,,,,,,,,,
+D,,,,,,,,,,,,
+E,,,,,ADP x,ADP x,ADP x,ADP x,,CHL a,,
+F,,,,,ADP x,ADP x,ADP x,ADP x,,CHL a,CHL a,
+G,,,,,ADP x,ADP x,ADP x,ADP x,,CHL a,,
+H,,,,,ADP x,ADP x,ADP x,ADP x,,CHL a,CHL a,
+,,,,,,,,,,,,
+Plate 1.3,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,,CCH x,,YCQ x,YCQ a,,,,,
+B,CCH x,CCH x,CCH x,,YCQ x,YCQ a,,,,,,
+C,,CCH x,CCH a,,YCQ a,,,YCQ x,,CRD x,CRD x,CRD a
+D,,,,,,YCQ x,YCQ x,,CRD a,CRD a,,
+E,,,,BRE x,,,,,,,,
+F,,BRE x,,BRE a,,,,,,,,
+G,BRE x,,BRE x,,,,,,,,,
+H,,,BRE a,,,,,,,,,
+,,,,,,,,,,,,
+Plate 1.4,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,,,,,,YCO a,,,,
+B,,,,,YCO x,,,,,,CGB x,
+C,,,,,,YCO a,YCO a,,,CGB x,CGB x,
+D,,,,,YCO a,YCO x,YCO x,,,CGB x,,
+E,,,,,CCD x,,,,,,,
+F,,,,,,,,CCD x,,,,
+G,,,,,,,CCD x,,,,,
+H,,,,,,CCD a,CCD a,,,,,
+,,,,,,,,,,,,
+Plate 1.5,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,,,,,,,,,,BPV a
+B,,,,,,,,,BPV x,BPV x,BPV a,BPV a
+C,,,,,,,,,,BPV x,,
+D,,YCI a,,,,,,,BPV x,,,
+E,,,,,,,BFD a,,YBS x,,,
+F,,,,,,,,BFD x,YBS a,,,
+G,,,,CIT x,BFD x,BFD x,,,,,,
+H,,,,,,,,,,YBS a,YBS x,
+,,,,,,,,,,,,
+Plate 1.6,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,AKE a,,,,,CDL a,BHT a,BHT a,BHT x,
+B,,AKE 2.2,,AKE a,,,,,,,BHT x,
+C,AKE a,AKE 2.3,,AKE x,CDL x,CDL a,CDL x,,,BHT x,,
+D,,,AKE x,,CDL a,CDL x,CDL a,CDL a,BHT x,,,
+E,,,BVD a,,,,JLF x,JLF a,,,,
+F,,BVD 2.2,,BVD x,JLF a,,JLF x,,CLB x,,CLB x,
+G,,BVD 2.3,BVD a,BVD a,JLF a,JLF a,,JLF x,,,,
+H,BVD x,,,,,,JLF x,,CLB a,CLB a,,CLB x
+,,,,,,,,,,,,
+Plate 1.7,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,,,CEQ a,,,,,,,
+B,,,,,,CEQ a,,,,,,
+C,,,,,CEQ x,,CEQ x,CEQ x,,,,
+D,,,,,,CEQ x,CEQ a,CEQ a,,,,
+E,,,,,,CMQ a,CMQ x,CMQ a,,,,
+F,,,,,CMQ a,,CMQ a,,,,,
+G,,,,,,,,CMQ x,,,,
+H,,,,,CMQ x,CMQ x,,,,,,
+,,,,,,,,,,,,
+Plate 1.8,1,2,3,4,5,6,7,8,9,10,11,12
+A,,CCH a,CCH a,,,YBS a,YBS x,YBS a,CRD a,,,CRD a
+B,,CCH x,CCH a,CCH a,,,YBS a,,CRD a,CRD a,,
+C,CCH x,,,CCH x,YBS x,YBS x,,,,,CRD x,
+D,,,,,,,,YBS x,,,,
+E,,,,CLB x,CLD x,,CLD x,CLD a,,,,
+F,,,,,,CLD a,CLD a,CLD a,,,YCQ a,
+G,CLB x,CLB a,CLB x,,CLD a,CLD x,,,YCQ a,,,YCQ a
+H,CLB x,,CLB a,CLB a,,,,,YCQ x,YCQ a,,
+,,,,,,,,,,,,
+Plate 1.9,1,2,3,4,5,6,7,8,9,10,11,12
+A,CMQ a,CMQ x,,,,,,,BFR x,BFR a,,
+B,,CMQ a,CMQ x,,,,,,BFR a,,,
+C,,,,,,,,,,,BFR a,
+D,,,CMQ a,CMQ a,,,,,,,,
+E,,,,,,,,,,AKS a,,
+F,,,,AQA a,BNH x,BNH a,BNH a,,AKS x,,,
+G,,,,AQA a,,BNH x,,BNH x,,,,
+H,,,,,,,,BNH a,,,,
+,,,,,,,,,,,,
+Plate 1.10,1,2,3,4,5,6,7,8,9,10,11,12
+A,,BHT x,,BHT a,,,AKM x,,CCD x,CCD a,CCD a,
+B,,,BHT a,,,AKM x,,,,,CCD x,
+C,,BHT x,,,AKM x,,,,,CCD x,,
+D,,,BHT x,BHT x,AKM x,,,,CCD a,,,CCD a
+E,,CRK a,,,,BIG a,BIG a,,CFQ x,,,
+F,,,,CRK a,BIG a,,,,,CFQ a,,
+G,,,CRK x,CRK a,BIG x,,,,,CFQ x,,
+H,CRK a,,,,,,,,,,,
+,,,,,,,,,,,,
+Plate 1.11,1,2,3,4,5,6,7,8,9,10,11,12
+A,BLD x,,,BLD x,CCV x,CCV x,CCV x,,AMR a,AMR a,,
+B,,,,BLD a,,CCV a,CCV x,,,,,
+C,,,,,,,,,,,,
+D,,,,,,,,,,,,
+E,,,,,,CAS x,,,,,,
+F,,ATM x,,,CAS a,CAS a,,,YCO a,,YCO a,YCO a
+G,,,,,,,,,,,,
+H,,,,,,,,,,,,YCO x
+,,,,,,,,,,,,
+Plate 1.12,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,,,CCP a,CCP x,,,BSC a,BSC a,BSC a,BSC x
+B,,,,,CCP x,CCP x,,,,BSC x,,
+C,,,,,,,CCP x,,,,BSC x,
+D,,,,,,,CCP a,,BSC a,,,
+E,CBD a,,CBD a,CBD a,BFD a,BFD a,BFD a,,,,,
+F,,CBD x,,CBD x,BFD x,,BFD a,,,,,
+G,,,CBD a,,,,,BFD a,,,,
+H,CBD x,CBD x,CBD x,,,BFD x,BFD a,BFD x,,,,
+,,,,,,,,,,,,
+Plate 1.13,1,2,3,4,5,6,7,8,9,10,11,12
+A,,JLS a,,JLS x,,,YAZ x,,,,BIS a,
+B,JLS a,,JLS x,,,YAZ x,YAZ x,,,BIS x,,BIS a
+C,,,,,,YAZ a,,,BIS a,,BIS x,BIS x
+D,,,JLS a,,,,,,,BIS x,,
+E,,,,,,,,,,,,AQC x
+F,,,,,,,,,AQC x,,AQC a,
+G,,,,,,,,,,AQC a,AQC x,AQC x
+H,,,,,,,,,,,,
+,,,,,,,,,,,,
+Plate 1.14,1,2,3,4,5,6,7,8,9,10,11,12
+A,,BNF x,BNF a,,BAH a,,BAH a,,,,,YBB a
+B,,BNF a,,BNF x,,BAH x,BAH x,BAH a,YBB a,YBB a,,
+C,,,BNF a,,BAH a,,,BAH x,,,,
+D,,,,BNF x,,BAH a,,,,,,
+E,,,,,,,,,,,,
+F,,,,,,,,,,,,
+G,CGS x,,,,,,,,,,,
+H, ,,,,,,,,,,,
+,,,,,,,,,,,,
+Plate 1.15,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,,,,,,CDF a,,,BLA a,BLA x
+B,,BLH x,BLH a,,,,CDF a,CDF a,,BLA x,,
+C,,,,,CDF x,CDF a,,,,,BLA x,
+D,,,,,CDF x,CDF x,CDF a,,BLA x,BLA x,,
+E,,,YBF a,,,CLC a,,CLC a,,,,
+F,,,,YBF a,CLC a,CLC a,CLC x,,,,,
+G,YBF a,YBF a,,YBF a,,,CLC a,CLC x,,,,
+H,YBF x,,,,CLC x,,,,,,,
+,,,,,,,,,,,,
+Plate 1.16,1,2,3,4,5,6,7,8,9,10,11,12
+A,,YCU a,YCU a,,,,,,,,,
+B,YCU a,,,YCU x,,,,,,,,
+C,,YCU x,YCU a,YCU a,,,,,,,,
+D,,,,,,,,,,,,
+E,YCH a,YCH x,,YCH a,CAM x,,,,,CRH x,,
+F,YCH x,,YCH a,,,,CAM a,,CRH x,,CRH x,
+G,,YCH a,YCH x,,,CAM x,CAM x,CAM a,,,,
+H,,,YCH x,,CAM a,CAM x,,CAM a,,CRH a,,CRH x
+,,,,,,,,,,,,
+Plate 1.17,1,2,3,4,5,6,7,8,9,10,11,12
+A,,YCP x,,,,EFK a,,,CCN x,,,
+B,YCP x,,YCP a,,,EFK x,,,,CCN x,CCN x,CCN a
+C,,YCP x,,,EKF x,,EFK x,EFK a,CCN a,,,
+D,YCP x,,YCP a,,EKF x,,EFK a,EFK x,,CCN a,CCN a,CCN a
+E,,,,,,BRD x,BRD x,BRD a,,CCQ a,,
+F,BVK a,BVK a,BVK a,BVK x,,,,,CCQ x,,CCQ x,
+G,BVK x,,BVK x,BVK a,,,,,,,CCQ a,
+H,,BVK x,,,,,,,,,,
+,,,,,,,,,,,,
+Plate 1.18,1,2,3,4,5,6,7,8,9,10,11,12
+A,BHV x,,BHV a,,CDQ a,,CDQ a,CDQ a,BIB a,,,BIB a
+B,,,BHV a,BHV x,CDQ a,,,CDQa,BIB x,,,
+C,,,,BHV x,,CDQ a,,,,BIB x,,
+D,,,,,,,,,,BIB x,,
+E,,,,,,,YAQ a,YAQ a,,,,
+F,,,,,YAQ x,,,YAQ x,,,,
+G,,,YDB a,,,YAQ a,,,,,,
+H,,,,,,YAQ x,YAQ x,,,,,
+,,,,,,,,,,,,
+Plate 1.19,1,2,3,4,5,6,7,8,9,10,11,12
+A,,BNF x,BNF a,,,BHK a,BHK x,BHK a,,,,
+B,,,,BNF a,,BHK x,,,,,,
+C,BNF a,BNF a,,,BHK a,,BHK a,,,,,
+D,BNF a,,,BNF x,BHK x,,,BHK x,,,,
+E,,BPM a,,BPM x,BTG a,BTG x,,,YBN x,,YBN a,
+F,,,BPM x,,,,,,,YBN a,,
+G,BPM a,,BPM a,,,,,,,,,
+H,BPM x,BPM x,,BPM a,,,,,,,,
+,,,,,,,,,,,,
+plate 1.20,1,2,3,4,5,6,7,8,9,10,11,12
+A,,ANC a,ANC a,,BAM a,,,,,ANF x,,
+B,ANC a,ANC x,ANC x,,,,,,,,,
+C,ANC x,,,ANC a,BAM x,,,,,,,
+D,,,,ANC x,,,,,,,,
+E,,,,,BAK a,BAK a,BAK a,BAK a,,YBH a,YBH x,
+F,YDC x,YDC a,YDC x,YDC a,BAK a,,,,,YBH x,,
+G,,YDC x,YDC x,,,,,,YBH a,,YBH a,YBH x
+H,,,,YDC x,,,,,YBH x,,,YBH x
+,,,,,,,,,,,,
+Plate 1.21,1,2,3,4,5,6,7,8,9,10,11,12
+A,YDE x,YDE a,YDE x,,CHA a,CHA x,CHA x,CHA a,BAT a,BAT a,BAT a,BAT x
+B,,YDE a,,,CHA x,CHA a,CHA a,CHA x,BAT x,BAT a,BAT x,BAT x
+C,,,,,,,,,,,BAT 3.3,
+D,YDE a,,YDE a,,,,,,,,,
+E,,,,,,,BKS a,,,,,
+F,,,,,BKS a,,BKS a,,,,BIC a,
+G,,,,,,,,,,,,
+H,,,,,,,,,,,,
+,,,,,,,,,,,,
+Plate 1.22,1,2,3,4,5,6,7,8,9,10,11,12
+A,BSB a,,,BSB x,,,,,CHM a,,CHM a,
+B,,,BSB a,,,,,,,,,
+C,,BSB x,,,,,,,CHM x,CHM x,,CHM x
+D,,,BSB x,BSB a,,,,,,CHM a,,CHM a
+E,,,CET a,,,,,,,,,
+F,,CET a,,CET x,YAG x,,YAG a,YAG x,,,,
+G,,,CET x,CET x,YAG a,YAG x,,YAG a,,,,
+H,,CET x,,,,YAG x,YAG a,,,,,
+,,,,,,,,,,,,
+Plate 1.23,1,2,3,4,5,6,7,8,9,10,11,12
+A,,CHB a,,CHB a,,,,,BER x,BER a,,
+B,CHB a,CHB x,CHB x,,BQN a,BQN a,,,BER a,BER x,,
+C,,,,CHB x,,,,,,,BER x,BER x
+D,CHB x,,CHB a,,,,,,,,BER x,
+E,YBT x,,,YBT a,,YBU a,YBU x,YBU a,,,,
+F,,,YBT a,,YBU a,,YBU x,,,,,
+G,,,,,,YBU a,,YBU a,,,,
+H,,YBT x,,YBT x,YBU a,,,,,,,
+,,,,,,,,,,,,
+Plate 1.24,1,2,3,4,5,6,7,8,9,10,11,12
+A,,YBW x,,,,,,,,,,
+B,,,YBW x,YBW a,,,,,BAT a,,BAT x,
+C,,YBW a,,,,,,,,BAT x,,BAT x
+D,,,,,,,,,,BAT x,,BAT a
+E,,BAK a,BAK a,BAK a,YCA x,YCA a,,,BIM x,,,
+F,,,,,,,YCA a,YCA x,BIM a,BIM a,,
+G,,BAK x,BAK x,,,YCA x,,,,BIM x,BIM a,BIM x
+H,BAK x,BAK x,,BAK x,YCA a,,,YCA x,,,,
+,,,,,,,,,,,,
+Plate 1.25,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,,,,,,,,,,
+B,,,,,,,,,,CMP a,CMP x,CMP a
+C,,,,,,,,,,CMP x,,CMP x
+D,,,,,,,,,,,CMP x,
+E,,,,,,,,,,BCM x,BCM x,BCM x
+F,,,,,,,,,,,,
+G,,,,,,,,,BCM a,BCM a,,BCM a
+H,,,,,,,,,BCM a,,,
+,,,,,,,,,,,,
+Plate 1.26,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,,,BIF x,,BIF x,,,,,
+B,,,,,,BIF x,,BIF x,,,,
+C,,,,,,BIF x,BIF x,,,,,
+D,,,,,,,,,,,,
+E,,,,,,,,,,,,
+F,,ANK x,,,,,,,,,,
+G,,,,,,,,,,,,
+H,,,,,,,,,,,,
+,,,,,,,,,,,,
+Plate 1.27,1,2,3,4,5,6,7,8,9,10,11,12
+A,CRL x,,,,,,CDC x,,,CCR x,,
+B,,,,CRL x,,,CDC x,,,,,
+C,,CRL x,CRL x,,CDC x,CDC a,,CDC x,,,,
+D,,,CRL x,CRL a,,CDC a,,CDC a,,,,
+E,,,,,CDV x,CDV x,,CDV x,BIA a,,,
+F,,,,,CDV a,,CDV a,,BIA x,,,
+G,,,,,,,,,,BIA x,,
+H,,,,,,,CDV x,,,BIA a,,BIA x
+,,,,,,,,,,,,
+Plate 1.28,1,2,3,4,5,6,7,8,9,10,11,12
+A,BAG a,,,BAG a,,,,,,,,
+B,,,BAG x,,,,,,,,,
+C,BAG a,BAG x,BAG a,,,,,,,,,
+D,,BAG x,,BAG a,,,,,,,,
+E,,,,,,,,,,,,
+F,,,,,,,,,,BBH a,,
+G,,,,,,,,,,,,
+H,,,,,,,,,,,BBH x,
+,,,,,,,,,,,,
+Plate 1.29,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,,,,,,,,CFP a,CFP a,
+B,,,,,,,,,,CFP x,,
+C,,,,,,,,,,CFP a,CFP a,
+D,,,,,,,,,,,,
+E,,,,BPT x,,,,,BKN x,,,
+F,BPT x,,BPT x,,,,BKK a,BKK a,BKN a,BKN a,BKN x,
+G,,,,BPT a,BKK x,,,BKK x,,,BKN x,
+H,,,,,BKK a,,BKK x,,,,,
+,,,,,,,,,,,,
+Plate 1.30,1,2,3,4,5,6,7,8,9,10,11,12
+A,,CDM x,,,,,,,,,,BMI x
+B,,,CDM x,,BQG a,BQG a,BQG a,BQG a,BMI x,BMI a,BMI x,
+C,,,CDM a,CDM a,BQG a,BQG x,,,BMI x,BMI x,,
+D,,,,CDM x,,,BQG x,,,,,
+E,,,,,ATP a,ATP x,ATP x,,,,,
+F,,,,,,ATP x,,,,,,
+G,,,,,ATP x,,ATP x,ATP x,BSE a,BSE a,,
+H,,,,,,,,,,,BSE a,
+,,,,,,,,,,,,
+Plate 1.31,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,,,YAM x,YAM a,,,CGK a,CGK x,,CGK x
+B,AQD a,,,,YAM a,,YAM a,,CGK a,,CGK x,
+C,,,,,,,YAM a,YAM a,,,CGK a,
+D,,,,,,,,YAM x,,,,
+E,,,BHN a,BHN a,YDF a,YDF x,YDF a,,BQA a,,,
+F,,,,BHN x,YDF a,YDF a,,,,BQA a,,
+G,,,,,,,YDF x,,,,,BQA a
+H,,,BHN x,,,,,,BQA x,BQA x,,BQA x
+,,,,,,,,,,,,
+Plate 1.32,1,2,3,4,5,6,7,8,9,10,11,12
+A,,ALE a,,ALE a,YCF x,,YCF a,YCF x,BAN x,BAN a,,
+B,,ALE x,,ALE x,YCF x,YCF x,,YCF a,,BAN x,BAN a,
+C,,,ALE x,,YCF x,YCF a,,,,,,
+D,,,,,,,,,,,,
+E,,,,YBA a,,,BFP x,,,YDO a,,
+F,,,YBA a,,,BFP a,BFP x,BFP x,YDO a,YDO x,,
+G,,,,,,,,,,,,
+H,,,,,,,,,,,,
+,,,,,,,,,,,,
+Plate 1.33,1,2,3,4,5,6,7,8,9,10,11,12
+A,,CDS x,CDS a,,,,,,BBM a,,,
+B,,,,,,,,,,BBM x,,
+C,,,,CDS x,,,,,BBM a,,,
+D,,,CDS a,CDS a,,,,,,BBM a,BBM x,
+E,,,,,,,,,,,,
+F,,,,,,,,,,,,
+G,,,,,,,,,,,,
+H,,,,,,,,,,,,
+,,,,,,,,,,,,
+Plate 1.34,1,2,3,4,5,6,7,8,9,10,11,12
+A,ANE a,ANE a,ANE x,,BCQ a,,,BCQ x,,,,
+B,ANE a,,ANE a,,,,,,,,,
+C,,,,ANE x,BCQ a,,BCQ x,BCQ a,,,CAC a,CAC a
+D,,ANE x,,ANE a,,,BCQ a,,,CAC x,,
+E,,,,,,BVV a,,BVV a,YAU x,,YAU a,
+F,,,,,BVV x,,,BVV x,,,,YAU a
+G,,,,,BVV a,BVV x,BVV x,,,,,
+H,,,,,,,,,,YAU x,YAU x,
+,,,,,,,,,,,,
+Plate 1.35,1,2,3,4,5,6,7,8,9,10,11,12
+A,AKN x,,,AKN x,CAB x,,,,,,,ANH x
+B,,AKN x,,,,,,,ANH a,ANH x,,
+C,,AKN a,AKN a,AKN a,CAB a,,,,,ANH a,ANH a,ANH a
+D,,,,,,,,,ANH a,,,
+E,,YAR a,,,,,,,ASS a,,,ASS a
+F,,YAR x,YAR a,YAR a,,,CQA a,CQA x,,,,
+G,YAR x,,YAR a,,CQA x,CQA a,CQA x,CQA x,ASS x,ASS x,,ASS x
+H,YAR x,,,YAR x,,,,,,,,
+,,,,,,,,,,,,
+Plate 1.36,1,2,3,4,5,6,7,8,9,10,11,12
+A,,CCS a,CCS a,,,,CEI a,,,CCC x,CCC x,CCC a
+B,,,,,,CEI a,CEI x,,,,,
+C,CCS x,,,,,,,CEI a,,CCC a,,
+D,CCS a,CCS x,,,,CEI x,CEI x,CEI a,,,,CCC x
+E,,CKT x,,CKT x,,AKH x,,,CAA x,CAA a,,
+F,,,,CKT x,AKH x,AKH a,AKH a,AKH x,,,,
+G,,,CKT x,,AKH x,,AKH x,AKH a,,,,
+H,CKT a,CKT a,CKT a,,,,,,,,,
+,,,,,,,,,,,,
+Plate 1.37,1,2,3,4,5,6,7,8,9,10,11,12
+A,BNR a,,BNR a,,,BEP a,BEP a,,CCG a,,CCG a,CCG a
+B,BNR x,,,BNR x,,BEP a,BEP a,,,,CCG a,
+C,,BNR x,,,BEP a,,,,,CCG x,,
+D,,,,BNR x,,,,,CCG a,CCG a,,
+E,CDN x,CDN a,CDN x,CDN a,CMB x,CMB x,,,,,,
+F,CDN x,CDN x,CDN a,CDN x,,,,,,,,
+G,CDN a,CDN x,CDN x,CDN a,,CMB x,,,,,,
+H,,,CDN a,CDN x,CMB a,,,,,,,
+,,,,,,,,,,,,
+Plate 1.38,1,2,3,4,5,6,7,8,9,10,11,12
+A,,JLE x,,JLE x,AKE x,AKE x,AKE a,AKE a,,,BRE x,
+B,,,,JLE a,,AKE x,AKE x,,,,,
+C,,,,,,,,AKE x,BRE x,,,
+D,,,,,,,,,BRE a,,,
+E,,,,,YCI a,YCI x,,,,,,
+F,,,,,,,YCI a,,,,,
+G,,,,,YCI x,,YCI a,YCI x,,,,
+H,,,,,,YCI a,,YCI x,,,,
+,,,,,,,,,,,,
+Plate 1.39,1,2,3,4,5,6,7,8,9,10,11,12
+A,BNH a,,BNH a,,AQA x,AQA a,,,BFR x,,,BFR x
+B,BNH x,BNH a,BNH a,,,,,AQA a,BFR a,,,
+C,,BNH x,,BNH x,,,,,,,,
+D,,,,BNH a,,,,,,,,
+E,,,,,,,,,,,,
+F,,,,,,,,,,,,
+G,,,,,,,,,,,,
+H,,,,,,,,,,,,
+,,,,,,,,,,,,
+Plate 1.40,1,2,3,4,5,6,7,8,9,10,11,12
+A,CAE a,,CAE a,CAE x,,,,,,,CGB a,CGB x
+B,,CAE x,,,,,,,CGB a,CGB a,,
+C,,,,,,,,,,CGB x,CGB x,CGB a
+D,CAE a,CAE a,,CAE x,,,,,CGB x,,,
+E,,,JLF a,JLF x,,,,,,,,
+F,JLF x,,JLF x,,,,,,,,,
+G,JLF a,JLF a,,,,,,,,,,
+H,,,,JLF a,,,,,,,,
+,,,,,,,,,,,,
+Plate 1.41,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,,,,,,,,,,
+B,,,,,,,,,,,,
+C,,,,,,AVI x,,AVI x,,,,
+D,,,,,,AVI a,,,,,,
+E,,,ANLC a,ANLC a,,BIT a,,,,,,
+F,,ANLC a,ANLC x,,,BIT x,BIT x,BIT x,,,,
+G,,ANLC a,,,BIT x,,BIT a,,,,,
+H,,,,,BIT a,,,,,,,
+,,,,,,,,,,,,
+Plate 1.42,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,,,,,,,,,,RM11 x
+B,,,,,,,,,RM11 a,,,
+C,,,,,APT a,APT a,APT a,APT a,,,,
+D,,,,,APT a,APT x,APT x,APT x,RM11 x,RM11 a,,
+E,,,,,,,,ALE a,,,,
+F,,,BBR x,,,,,,,,,
+G,,BBR a,,BBR x,,ALE a,,,,,,
+H,,,,,ALE a,,,,,,,
+,,,,,,,,,,,,
+Plate 1.43,1,2,3,4,5,6,7,8,9,10,11,12
+A,,,,,,BBB a,BBB a,BBB x,JLU x,JLU a,JLU x,
+B,,BQT a,BQT x,BQT x,,BBB x,,,JLU a,JLU x,JLU x,
+C,,BQT x,,,BBB a,,BBB a,,,,,
+D,,,BQT a,BQT a,BBB x,,,BBB x,,,,
+E,,,BSD a,,,,,,,ALB x,,
+F,,,,BSD a,YDN a,YDN a,YDN x,,,,,
+G,BSD a,,BSD x,,YDN x,YDN a,YDN a,,,,,
+H,,BSD a,,BSD x,,,,,,,,
