@@ -10,7 +10,8 @@ library(data.table)
 # locations of things -----------------------------------------------------------------------
 #location of vcf file from 1011 isolates, preprocessed as a qs object
 #vcf.qs.file='/u/project/kruglyak/jsbloom/PUBLIC_SHARED/yeast/1011/mega_filtered.qs'
-vcf.qs.file='/media/hoffman2/PUBLIC_SHARED/yeast/1011/mega_filtered.qs'
+#vcf.qs.file='/media/hoffman2/PUBLIC_SHARED/yeast/1011/mega_filtered.qs'
+vcf.qs.file='/media/hoffman2/PUBLIC_SHARED/yeast/1011/gt.qs'
 
 #location of GATK ASEReadCount tables, output from 02_align.sh
 count_dir='/data2/strainMatch/count_files/' #xQTL/FluconazoleV1_041825/count_files/'
@@ -22,12 +23,14 @@ key.file='/data2/strainMatch/SampleSheet.csv'
 
 
 
-mega_filtered=qs::qread(vcf.qs.file) #'/data1/yeast/reference/pop_vcfs/1011/mega_filtered.qs')
-vcf=mega_filtered$vcf
+#mega_filtered=qs::qread(vcf.qs.file) #'/data1/yeast/reference/pop_vcfs/1011/mega_filtered.qs')
+#vcf=mega_filtered$vcf
 # pull out the genotype entries (num vector w/ marker + genotype info added as charac vectors)
-gt=mega_filtered$gt
+#gt=mega_filtered$gt
 # remove the og file from memory, retain vcf object and gt object only
-rm(mega_filtered)
+#rm(mega_filtered)
+gt=qs::qread(vcf.qs.file)
+
 
 #read in expected samples, remove first 417 lines
 samples=readr::read_csv(key.file, skip=417)
@@ -55,10 +58,12 @@ for(n in 1:nrow(samples) ) { #nrow(samples)) {
     }
 
 }
+#qs::qsave(countdfs, file='/data2/strainMatch/countdfs.qs')
+
     
 #calculate coverage per sample at the expected segregating sites 
 tdepth.v=sapply(countdfs, function(x) { sum(x$ref+x$alt, na.rm=T)/sum(!is.na(x$ref)) })
-
+#qs::qsave(tdepth.v, file='/data2/strainMatch/tdepth.qs')
 #hard call variant sites (if alt read counts  > ref ref
 ref.vec=sapply(countdfs, function(x) ifelse(x$alt>x$ref, 1,0) ) #sum(x$ref+x$alt)/nrow(x))
 
@@ -75,4 +80,9 @@ for(i in 1:ncol(ref.vec) ){
     #which.min(hdist)
 }
 
+apply(hdist.matrix, 2, function(x) rownames(hdist.matrix)[which.min(x)])
+apply(hdist.matrix, 2, function(x) min(x))
+
+#qs::qsave(tdepth.v, file='/data2/strainMatch/tdepth.qs')
+#qs::qsave(hdist.matrix, file='/data2/strainMatch/hdist.qs')
 
